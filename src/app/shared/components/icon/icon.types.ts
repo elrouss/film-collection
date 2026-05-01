@@ -1,4 +1,4 @@
 type IconName = 'date-range' | 'favorite' | 'hourglass' | 'kid-star' | 'movie' | 'search';
-type IconSize = 'm' | 'l';
+type IconSize = 's' | 'm' | 'l';
 
 export type { IconName, IconSize };

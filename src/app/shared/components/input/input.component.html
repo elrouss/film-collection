@@ -1,0 +1,17 @@
+@let iconName = icon();
+
+<div class="relative">
+  <input
+    class="w-full border-2 border-solid border-neutral-100 rounded-sm ps-3 pe-10 py-2 text-ellipsis"
+    [type]="type()"
+    [placeholder]="placeholder()"
+  />
+
+  @if (iconName) {
+    <app-icon
+      class="absolute -z-[1] inset-bs-[50%] inset-e-[12px] -translate-y-[50%]"
+      size="s"
+      [name]="iconName"
+    />
+  }
+</div>

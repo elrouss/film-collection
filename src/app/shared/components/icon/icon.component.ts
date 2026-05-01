@@ -18,6 +18,9 @@ export class IconComponent {
       case 'l':
         base.push('w-[40px]');
         break;
+      case 's':
+        base.push('w-[20px]');
+        break;
       default:
         base.push('w-[24px]');
     }
