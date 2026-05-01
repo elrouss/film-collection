@@ -1,6 +1,7 @@
 import { Component, computed, input } from '@angular/core';
 
-import type { Type, Variant } from './button.types';
+import type { ButtonType } from '../../models/ui.model';
+import type { Variant } from './button.types';
 
 @Component({
   selector: 'app-button',
@@ -8,12 +9,12 @@ import type { Type, Variant } from './button.types';
   templateUrl: './button.component.html',
 })
 export class ButtonComponent {
-  readonly type = input<Type>('button');
+  readonly type = input<ButtonType>('button');
   readonly variant = input<Variant>('text');
   readonly disabled = input<boolean>(false);
 
   protected readonly _className = computed(() => {
-    const basic = [
+    const base = [
       'py-2',
       'px-3',
       'rounded-sm',
@@ -25,7 +26,7 @@ export class ButtonComponent {
 
     switch (this.variant()) {
       case 'contained':
-        basic.push(
+        base.push(
           'text-neutral-50',
           'bg-blue-500',
           'hover:enabled:bg-blue-600',
@@ -33,9 +34,9 @@ export class ButtonComponent {
         );
         break;
       default:
-        basic.push('text-blue-500');
+        base.push('text-blue-500');
     }
 
-    return basic;
+    return base;
   });
 }
