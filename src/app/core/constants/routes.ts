@@ -1,6 +1,6 @@
 export const ROUTES = {
   home: '',
   about: 'about',
-  filmDetails: 'film/:id',
+  filmDetails: 'film/:filmId',
   wildcard: '**',
 } as const;

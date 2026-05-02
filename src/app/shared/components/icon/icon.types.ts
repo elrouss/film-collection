@@ -1,6 +1,7 @@
 type IconName =
   | 'date-range'
   | 'favorite'
+  | 'favorite-filled'
   | 'hourglass'
   | 'github'
   | 'kid-star'

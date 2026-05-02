@@ -1,3 +1,5 @@
+@let isFavoriteCard = isFavorite();
+
 <article class="group relative flex flex-col h-full">
   <div class="order-2">
     <h2 class="line-clamp-2 text-3xl">{{ title() }}</h2>
@@ -27,10 +29,11 @@
 
     <app-icon-button
       class="absolute z-[2] inset-bs-[12px] inset-e-[12px]"
-      icon="favorite"
       size="l"
-      [ariaLabel]="isFavorite() ? 'Delete favorites' : 'Add to favorites'"
+      [icon]="isFavoriteCard ? 'favorite-filled' : 'favorite'"
+      [ariaLabel]="isFavoriteCard ? 'Delete favorites' : 'Add to favorites'"
       [withBg]="true"
+      (click)="_filmsService.toggleFavoriteStatus(id())"
     />
   </div>
 
