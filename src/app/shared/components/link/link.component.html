@@ -1,0 +1,29 @@
+@let iconName = icon();
+@let external = isExternal();
+
+@if (routerLink()) {
+  <a
+    class="inline-flex items-center gap-2 py-2 px-3 transition-colors duration-300 hover:text-amber-500"
+    routerLinkActive="text-amber-500 underline underline-offset-4 pointer-events-none"
+    [routerLink]="routerLink()"
+  >
+    @if (iconName) {
+      <app-icon size="s" [name]="iconName" />
+    }
+
+    {{ text() }}</a
+  >
+} @else {
+  <a
+    class="inline-flex items-center gap-2 py-2 px-3 transition-colors duration-300 hover:text-amber-500"
+    [href]="href()"
+    [attr.target]="external ? '_blank' : null"
+    [attr.rel]="external ? 'noopener noreferrer' : null"
+  >
+    @if (iconName) {
+      <app-icon size="s" [name]="iconName" />
+    }
+
+    {{ text() }}</a
+  >
+}
