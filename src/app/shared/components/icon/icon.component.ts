@@ -16,7 +16,7 @@ export class IconComponent {
 
     switch (this.size()) {
       case 'l':
-        base.push('w-[40px]');
+        base.push('w-[28px]');
         break;
       case 's':
         base.push('w-[20px]');
