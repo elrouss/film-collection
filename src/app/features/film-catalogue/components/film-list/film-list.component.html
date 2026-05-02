@@ -1,0 +1,15 @@
+<ul class="grid grid-cols-3 gap-5">
+  @for (film of films(); track film.id) {
+    <li>
+      <app-film-card
+        [id]="film.id"
+        [title]="film.title"
+        [genre]="film.genre"
+        [rating]="film.rating"
+        [year]="film.year"
+        [poster]="film.posterUrl"
+        [isFavorite]="film.isFavorite"
+      />
+    </li>
+  }
+</ul>

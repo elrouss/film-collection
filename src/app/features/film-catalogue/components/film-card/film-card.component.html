@@ -1,0 +1,42 @@
+<article class="group relative flex flex-col h-full">
+  <div class="order-2">
+    <h2 class="line-clamp-2 text-3xl">{{ title() }}</h2>
+
+    <ul class="flex gap-2">
+      <li class="flex items-center">
+        <time [attr.datetime]="year()">{{ year() }}</time>
+      </li>
+
+      <li class="flex items-center">{{ genre() }}</li>
+    </ul>
+
+    <span class="inline-flex gap-1"
+      ><app-icon class="text-amber-500" name="kid-star" /> {{ rating() }}
+    </span>
+  </div>
+
+  <div class="overflow-hidden relative order-1 mbe-2">
+    <img
+      ngSrc="{{ poster() }}"
+      class="group-hover:scale-103 w-full aspect-[1/1.48] transition-transform duration-300"
+      width="414"
+      height="612"
+      alt="Poster"
+      priority
+    />
+
+    <app-icon-button
+      class="absolute z-[2] inset-bs-[12px] inset-e-[12px]"
+      icon="favorite"
+      size="l"
+      [ariaLabel]="isFavorite() ? 'Delete favorites' : 'Add to favorites'"
+      [withBg]="true"
+    />
+  </div>
+
+  <a
+    class="absolute z-[1] inset-bs-0 inset-s-0 w-full h-full focus:outline-none focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-amber-500 focus-visible:outline-offset-8"
+    [routerLink]="`/film/${id()}`"
+    ><span class="opacity-0">See details</span></a
+  >
+</article>
