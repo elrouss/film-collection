@@ -20,6 +20,7 @@ export class ButtonComponent {
       'rounded-sm',
       'uppercase',
       'transition-colors',
+      'duration-300',
       'cursor-pointer',
       'disabled:cursor-not-allowed',
     ];
