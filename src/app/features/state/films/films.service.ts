@@ -22,7 +22,17 @@ export class FilmsService {
     },
   });
 
-  readonly getFilms: Signal<Film[]> = computed(() => this._state().data.films);
+  readonly getFilms = (filters?: { title: string }): Signal<Film[]> =>
+    computed(() => {
+      const { films } = this._state().data;
+
+      if (!filters) {
+        return films;
+      }
+
+      const titleFilter = filters.title.toLowerCase();
+      return films.filter((film) => film.title.toLowerCase().includes(titleFilter));
+    });
 
   readonly getFavoriteFilms: Signal<Film[]> = computed(() =>
     this._state().data.films.filter((film) => film.isFavorite),

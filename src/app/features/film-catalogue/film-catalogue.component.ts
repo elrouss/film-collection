@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import { InputComponent } from '../../shared/components/input/input.component';
 import { FilmListComponent } from './components/film-list/film-list.component';
@@ -12,4 +12,13 @@ import { FilmsService } from '../state/films/films.service';
 })
 export class FilmCatalogueComponent {
   protected readonly _filmsService = inject(FilmsService);
+  protected readonly _titleFilter = signal<string>('');
+
+  protected readonly _searchFilmByTitle = ({ target }: Event): void => {
+    if (!(target instanceof HTMLInputElement)) {
+      return;
+    }
+
+    this._titleFilter.set(target.value);
+  };
 }
