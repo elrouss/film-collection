@@ -5,9 +5,11 @@ import { FilmListComponent } from './components/film-list/film-list.component';
 
 import { FilmsService } from '../state/films/films.service';
 
+import { AutofocusDirective } from '../../shared/directives/autofocus/autofocus.directive';
+
 @Component({
   selector: 'app-film-catalogue',
-  imports: [FilmListComponent, InputComponent],
+  imports: [AutofocusDirective, FilmListComponent, InputComponent],
   templateUrl: './film-catalogue.component.html',
 })
 export class FilmCatalogueComponent {
