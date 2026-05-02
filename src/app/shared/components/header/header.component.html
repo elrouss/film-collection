@@ -1,0 +1,25 @@
+<header class="max-w-7xl mx-auto">
+  <div class="flex justify-between items-center gap-6 py-5 mx-10">
+    <div class="flex items-center gap-4">
+      <app-logo />
+
+      <h1 class="text-4xl">Film Collection</h1>
+    </div>
+
+    <nav>
+      <ul class="flex gap-3">
+        @for (
+          link of [
+            { name: 'Home', href: '' },
+            { name: 'About', href: '/about' },
+          ];
+          track $index
+        ) {
+          <li>
+            <app-link [text]="link.name" [routerLink]="link.href" />
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
