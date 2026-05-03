@@ -1,14 +1,16 @@
-import { Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 import { IconComponent } from '../icon/icon.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-link',
   imports: [IconComponent, RouterLink, RouterLinkActive],
   templateUrl: './link.component.html',
   host: {
     class: 'inline-flex',
+    '[attr.tabindex]': 'null',
   },
 })
 export class LinkComponent {

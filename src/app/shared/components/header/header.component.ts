@@ -1,4 +1,12 @@
-import { Component, DOCUMENT, effect, inject, Renderer2, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DOCUMENT,
+  effect,
+  inject,
+  Renderer2,
+  signal,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { BurgerComponent } from '../burger/burger.component';
@@ -6,6 +14,7 @@ import { LinkComponent } from '../link/link.component';
 import { LogoComponent } from '../logo/logo.component';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-header',
   imports: [BurgerComponent, LinkComponent, LogoComponent, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',

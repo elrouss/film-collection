@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, OnInit } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 import { EmptyComponent } from '../../shared/components/empty/empty.component';
@@ -10,6 +10,7 @@ import { FilmsService } from '../state/films/films.service';
 import { DurationPipe } from '../../shared/pipes/duration/duration-pipe';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-film-details',
   imports: [DurationPipe, EmptyComponent, IconComponent, LinkComponent, NgOptimizedImage],
   templateUrl: './film-details.component.html',

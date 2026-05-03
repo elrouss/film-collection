@@ -1,10 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 
 import { LinkComponent } from '../link/link.component';
 
 import { BreadcrumbService } from './breadcrumb.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-breadcrumb',
   imports: [LinkComponent],
   templateUrl: './breadcrumb.component.html',

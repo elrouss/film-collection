@@ -1,10 +1,11 @@
-import { Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 import { IconComponent } from '../icon/icon.component';
 
 import type { ButtonType } from '../../models/ui.model';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-icon-button',
   imports: [IconComponent],
   templateUrl: './icon-button.component.html',

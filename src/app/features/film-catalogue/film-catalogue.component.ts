@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 
 import { EmptyComponent } from '../../shared/components/empty/empty.component';
 import { FilmListComponent } from './components/film-list/film-list.component';
@@ -9,6 +9,7 @@ import { FilmsService } from '../state/films/films.service';
 import { AutofocusDirective } from '../../shared/directives/autofocus/autofocus.directive';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-film-catalogue',
   imports: [AutofocusDirective, EmptyComponent, FilmListComponent, InputComponent],
   templateUrl: './film-catalogue.component.html',

@@ -1,8 +1,9 @@
-import { Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 import type { IconName, IconSize } from './icon.types';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-icon',
   templateUrl: './icon.component.html',
   standalone: true,

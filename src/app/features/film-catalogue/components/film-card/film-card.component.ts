@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 
 import { IconButtonComponent } from '../../../../shared/components/icon-button/icon-button.component';
@@ -10,6 +10,7 @@ import type { Film } from '../../../../core/models/film.model';
 import { RouterLink } from '@angular/router';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-film-card',
   imports: [IconButtonComponent, IconComponent, NgOptimizedImage, RouterLink],
   templateUrl: './film-card.component.html',
