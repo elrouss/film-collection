@@ -12,6 +12,7 @@
     font-family: var(--font-inter);
     font-size: var(--text-base);
     color: var(--color-neutral-100);
-    background-color: var(--color-indigo-900);
+    background: linear-gradient(135deg, var(--color-indigo-950) 33%, var(--color-indigo-900) 90%);
+    background-attachment: fixed;
   }
 }
