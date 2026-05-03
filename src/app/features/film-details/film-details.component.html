@@ -3,14 +3,15 @@
 <section class="mbs-2">
   <app-link class="-ms-3.5" [text]="'Back'" [icon]="'arrow-back'" [routerLink]="'/'" />
 
-  <div class="flex gap-10 mbs-2">
+  <div class="flex flex-col md:flex-row gap-10 mbs-2">
     @if (film) {
       <div class="order-2">
         <header>
           <div class="flex items-center gap-2 text-3xl">
-            <h2>{{ film.title }}</h2>
-
-            <time class="font-light" [attr.datetime]="film.year">({{ film.year }})</time>
+            <h2>
+              {{ film.title }}
+              <time class="font-light" [attr.datetime]="film.year">({{ film.year }})</time>
+            </h2>
           </div>
 
           <ul class="flex gap-2 mbs-1 list-disc">
@@ -33,7 +34,7 @@
 
       <img
         ngSrc="{{ film.posterUrl }}"
-        class="order-1"
+        class="order-1 mx-auto"
         width="414"
         height="612"
         alt="Poster"
@@ -41,7 +42,7 @@
       />
     } @else {
       <app-empty
-        class="mbs-34 mx-auto"
+        class="my-17 md:my-34 mx-auto"
         [heading]="'Nothing found'"
         [description]="'The movie you\'re looking for might have been removed or&nbsp;the link is&nbsp;incorrect.\nTry browsing our catalog instead'"
         [icon]="'cancel'"

@@ -1,0 +1,21 @@
+@let isPressed = pressed();
+
+<button
+  type="button"
+  aria-haspopup="menu"
+  [class]="_className()"
+  [attr.aria-label]="isPressed ? 'Close hamburger menu' : 'Open hamburger menu'"
+  [attr.aria-pressed]="isPressed"
+>
+  <span
+    class="group-hover:bg-amber-500 [transition:background-color_0.3s,transform_0.3s] w-full h-1 rounded-md bg-neutral-100"
+  ></span>
+
+  <span
+    class="group-hover:bg-amber-500 [transition:background-color_0.3s,opacity_0.3s] w-full h-1 rounded-md bg-neutral-100"
+  ></span>
+
+  <span
+    class="group-hover:bg-amber-500 [transition:background-color_0.3s,transform_0.3s] w-full h-1 rounded-md bg-neutral-100"
+  ></span>
+</button>

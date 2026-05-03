@@ -1,22 +1,22 @@
 @let description$ = description();
 @let icon$ = icon();
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center text-center">
   @if (icon$) {
     <app-icon class="mbe-3" [name]="icon$" [size]="'xl'" />
   }
 
   @switch (headingLevel()) {
     @case (3) {
-      <h3 class="text-center text-3xl">{{ heading() }}</h3>
+      <h3 class="text-3xl">{{ heading() }}</h3>
     }
     @default {
-      <h2 class="text-center text-3xl">{{ heading() }}</h2>
+      <h2 class="text-3xl">{{ heading() }}</h2>
     }
   }
 
   @if (description$) {
-    <p class="mbs-2 text-center text-2xl whitespace-pre">{{ description$ }}</p>
+    <p class="mbs-2 text-2xl whitespace-pre-line">{{ description$ }}</p>
   }
 
   <ng-content />

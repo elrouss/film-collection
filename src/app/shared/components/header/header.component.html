@@ -1,20 +1,51 @@
+@let links =
+  [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+  ];
+@let isBurgerPressed = _pressedBurger();
+
 <header class="max-w-7xl mx-auto">
-  <div class="flex justify-between items-center gap-6 py-5 mx-10">
+  <div class="flex justify-between items-center gap-5 min-h-30 py-5 mx-4">
     <div class="flex items-center gap-4">
       <app-logo />
 
       <h1 class="text-4xl">Film Collection</h1>
     </div>
 
-    <nav>
+    <app-burger
+      class="inline-flex md:hidden"
+      [pressed]="isBurgerPressed"
+      (click)="_toggleBurger()"
+    />
+
+    <div
+      class="fixed z-[1000] inset-bs-30 inset-s-0 block md:hidden w-full h-[calc(100%-120px)] bg-indigo-900 transition-transform duration-300"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Hamburger menu"
+      [class]="isBurgerPressed ? '[&&.translate-x-0]:translate-x-0' : 'translate-x-full'"
+    >
+      <nav class="my-20">
+        <ul class="flex flex-col items-center gap-3">
+          @for (link of links; track $index) {
+            <li>
+              <app-link
+                #rla="routerLinkActive"
+                routerLinkActive=""
+                [text]="link.name"
+                [routerLink]="link.href"
+                (click)="_navigateByLink(rla)"
+              />
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="hidden md:block">
       <ul class="flex gap-3">
-        @for (
-          link of [
-            { name: 'Home', href: '/' },
-            { name: 'About', href: '/about' },
-          ];
-          track $index
-        ) {
+        @for (link of links; track $index) {
           <li>
             <app-link [text]="link.name" [routerLink]="link.href" />
           </li>

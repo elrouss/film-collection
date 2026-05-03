@@ -13,6 +13,9 @@ import { RouterLink } from '@angular/router';
   selector: 'app-film-card',
   imports: [IconButtonComponent, IconComponent, NgOptimizedImage, RouterLink],
   templateUrl: './film-card.component.html',
+  host: {
+    class: 'block',
+  },
 })
 export class FilmCardComponent {
   protected readonly _filmsService = inject(FilmsService);

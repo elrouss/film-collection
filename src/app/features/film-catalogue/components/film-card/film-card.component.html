@@ -1,6 +1,6 @@
 @let isFavoriteCard = isFavorite();
 
-<article class="group relative flex flex-col h-full">
+<article class="group relative flex flex-col w-fit h-full">
   <div class="order-2">
     <h2 class="line-clamp-2 text-3xl">{{ title() }}</h2>
 
@@ -17,12 +17,12 @@
     </span>
   </div>
 
-  <div class="overflow-hidden relative order-1 mbe-2">
+  <div class="overflow-hidden relative order-1 w-fit mbe-2">
     <img
       ngSrc="{{ poster() }}"
       class="group-hover:scale-103 w-full aspect-[1/1.48] transition-transform duration-300"
-      width="414"
-      height="612"
+      width="272"
+      height="408"
       alt="Poster"
       priority
     />

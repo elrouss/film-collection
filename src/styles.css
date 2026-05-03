@@ -1,3 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer base {
+  html {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: var(--font-inter);
+    font-size: var(--text-base);
+    color: var(--color-neutral-100);
+    background-color: var(--color-indigo-900);
+  }
+}
