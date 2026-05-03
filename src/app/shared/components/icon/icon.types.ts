@@ -1,4 +1,5 @@
 type IconName =
+  | 'arrow-back'
   | 'cancel'
   | 'date-range'
   | 'favorite'

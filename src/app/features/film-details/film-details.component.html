@@ -1,47 +1,51 @@
 @let film = _filmsService.getFilmById();
 
-<section class="flex gap-10 mbs-5">
-  @if (film) {
-    <div class="order-2">
-      <header>
-        <div class="flex items-center gap-2 text-3xl">
-          <h2>{{ film.title }}</h2>
+<section class="mbs-2">
+  <app-link class="-ms-3.5" [text]="'Back'" [icon]="'arrow-back'" [routerLink]="'/'" />
 
-          <time class="font-light" [attr.datetime]="film.year">({{ film.year }})</time>
+  <div class="flex gap-10 mbs-2">
+    @if (film) {
+      <div class="order-2">
+        <header>
+          <div class="flex items-center gap-2 text-3xl">
+            <h2>{{ film.title }}</h2>
+
+            <time class="font-light" [attr.datetime]="film.year">({{ film.year }})</time>
+          </div>
+
+          <ul class="flex gap-2 mbs-1 list-disc">
+            <li class="list-none">{{ film.genre }}</li>
+
+            <li class="ms-4">{{ film.duration | duration }}</li>
+          </ul>
+
+          <span class="inline-flex gap-1 mbs-1"
+            ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ film.rating }}
+          </span>
+        </header>
+
+        <div class="mbs-5">
+          <h3 class="text-xl">Overview</h3>
+
+          <p class="mbs-1">{{ film.description }}</p>
         </div>
-
-        <ul class="flex gap-2 mbs-1 list-disc">
-          <li class="list-none">{{ film.genre }}</li>
-
-          <li class="ms-4">{{ film.duration | duration }}</li>
-        </ul>
-
-        <span class="inline-flex gap-1 mbs-1"
-          ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ film.rating }}
-        </span>
-      </header>
-
-      <div class="mbs-5">
-        <h3 class="text-xl">Overview</h3>
-
-        <p class="mbs-1">{{ film.description }}</p>
       </div>
-    </div>
 
-    <img
-      ngSrc="{{ film.posterUrl }}"
-      class="order-1"
-      width="414"
-      height="612"
-      alt="Poster"
-      priority
-    />
-  } @else {
-    <app-empty
-      class="mbs-34 mx-auto"
-      [heading]="'Nothing found'"
-      [description]="'The movie you\'re looking for might have been removed or&nbsp;the link is&nbsp;incorrect.\nTry browsing our catalog instead'"
-      [icon]="'cancel'"
-    />
-  }
+      <img
+        ngSrc="{{ film.posterUrl }}"
+        class="order-1"
+        width="414"
+        height="612"
+        alt="Poster"
+        priority
+      />
+    } @else {
+      <app-empty
+        class="mbs-34 mx-auto"
+        [heading]="'Nothing found'"
+        [description]="'The movie you\'re looking for might have been removed or&nbsp;the link is&nbsp;incorrect.\nTry browsing our catalog instead'"
+        [icon]="'cancel'"
+      />
+    }
+  </div>
 </section>

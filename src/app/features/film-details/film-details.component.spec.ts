@@ -1,4 +1,5 @@
 import { ComponentRef } from '@angular/core';
+import { provideRouter } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilmDetailsComponent } from './film-details.component';
@@ -11,6 +12,7 @@ describe('FilmDetailsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FilmDetailsComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FilmDetailsComponent);
