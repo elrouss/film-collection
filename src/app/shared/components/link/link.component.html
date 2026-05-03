@@ -3,9 +3,13 @@
 
 @if (routerLink()) {
   <a
-    class="inline-flex items-center gap-2 py-2 px-3 transition-colors duration-300 hover:text-amber-500"
+    #rla="routerLinkActive"
     routerLinkActive="text-amber-500 underline underline-offset-4 pointer-events-none"
+    ariaCurrentWhenActive="page"
+    [attr.tabindex]="rla.isActive ? -1 : 0"
+    [class]="_className()"
     [routerLink]="routerLink()"
+    [routerLinkActiveOptions]="{ exact: true }"
   >
     @if (iconName) {
       <app-icon size="s" [name]="iconName" />
@@ -15,10 +19,11 @@
   >
 } @else {
   <a
-    class="inline-flex items-center gap-2 py-2 px-3 transition-colors duration-300 hover:text-amber-500"
+    [class]="_className()"
     [href]="href()"
     [attr.target]="external ? '_blank' : null"
     [attr.rel]="external ? 'noopener noreferrer' : null"
+    [attr.aria-current]="ariaCurrent()"
   >
     @if (iconName) {
       <app-icon size="s" [name]="iconName" />

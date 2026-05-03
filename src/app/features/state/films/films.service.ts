@@ -42,6 +42,10 @@ export class FilmsService {
     () => this._state().data.filmById,
   );
 
+  // TODO
+  readonly getFilmById2 = (id: Film['id']): Signal<Film | undefined> =>
+    computed(() => this._state().data.films.find((film) => film.id === id));
+
   readonly setFilmById = (id: Film['id']): void => {
     const state = this._state();
 

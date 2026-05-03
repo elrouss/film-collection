@@ -6,5 +6,8 @@ import { LinkComponent } from '../link/link.component';
   selector: 'app-footer',
   imports: [LinkComponent],
   templateUrl: './footer.component.html',
+  host: {
+    class: 'block',
+  },
 })
 export class FooterComponent {}
