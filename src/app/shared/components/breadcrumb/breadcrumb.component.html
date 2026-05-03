@@ -1,6 +1,6 @@
 @let breadcrumbs = _breadcrumbs();
 
-<nav class="overflow-auto px-2 py-1 -ms-5 whitespace-nowrap" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" [class]="_className()">
   <ol class="flex">
     @for (breadcrumb of breadcrumbs; track breadcrumb.url) {
       <li

@@ -23,19 +23,24 @@ export class ButtonComponent {
       'duration-300',
       'cursor-pointer',
       'disabled:cursor-not-allowed',
+      'focus:outline-none',
+      'focus-visible:outline-2',
+      'focus-visible:outline-solid',
+      'focus-visible:outline-amber-500',
+      'focus-visible:outline-offset-4',
     ];
 
     switch (this.variant()) {
       case 'contained':
         base.push(
           'text-neutral-50',
-          'bg-blue-500',
-          'hover:enabled:bg-blue-600',
-          'disabled:bg-blue-400',
+          'bg-amber-500',
+          'hover:enabled:bg-amber-600',
+          'disabled:bg-amber-400',
         );
         break;
       default:
-        base.push('text-blue-500');
+        base.push('text-amber-500');
     }
 
     return base;
