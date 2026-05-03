@@ -12,6 +12,6 @@ export const filmdTitleBreadcrumbResolver: ResolveFn<string> = (route) => {
     return TITLE_PLACEHOLDER;
   }
 
-  const filmTitle = filmsService.getFilmById2(Number(filmId))()?.title;
+  const filmTitle = filmsService.getFilmById(Number(filmId))()?.title;
   return filmTitle || TITLE_PLACEHOLDER;
 };

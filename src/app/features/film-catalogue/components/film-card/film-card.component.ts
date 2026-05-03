@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   imports: [IconButtonComponent, IconComponent, NgOptimizedImage, RouterLink],
   templateUrl: './film-card.component.html',
   host: {
-    class: 'block',
+    class: 'block h-full',
   },
 })
 export class FilmCardComponent {

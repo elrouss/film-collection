@@ -1,4 +1,4 @@
-@let film = _filmsService.getFilmById();
+@let film = _filmById();
 
 <section class="mbs-2">
   <app-link class="-ms-3.5" [text]="'Back'" [icon]="'arrow-back'" [routerLink]="'/'" />
@@ -34,7 +34,7 @@
 
       <img
         ngSrc="{{ film.posterUrl }}"
-        class="order-1 mx-auto"
+        class="order-1 object-cover mx-auto"
         width="414"
         height="612"
         alt="Poster"

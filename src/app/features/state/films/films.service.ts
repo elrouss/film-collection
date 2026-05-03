@@ -7,7 +7,6 @@ import type { Film } from '../../../core/models/film.model';
 interface State {
   data: {
     films: Film[];
-    filmById: Omit<Film, 'id'> | null;
   };
 }
 
@@ -18,7 +17,6 @@ export class FilmsService {
   private readonly _state = signal<State>({
     data: {
       films: filmsMock,
-      filmById: null,
     },
   });
 
@@ -38,25 +36,8 @@ export class FilmsService {
     this._state().data.films.filter((film) => film.isFavorite),
   );
 
-  readonly getFilmById: Signal<Omit<Film, 'id'> | null> = computed(
-    () => this._state().data.filmById,
-  );
-
-  // TODO
-  readonly getFilmById2 = (id: Film['id']): Signal<Film | undefined> =>
+  readonly getFilmById = (id: Film['id']): Signal<Film | undefined> =>
     computed(() => this._state().data.films.find((film) => film.id === id));
-
-  readonly setFilmById = (id: Film['id']): void => {
-    const state = this._state();
-
-    this._state.set({
-      ...state.data,
-      data: {
-        ...state.data,
-        filmById: state.data.films.find((film) => film.id === id) ?? null,
-      },
-    });
-  };
 
   readonly toggleFavoriteStatus = (id: Film['id']): void => {
     const state = this._state();
