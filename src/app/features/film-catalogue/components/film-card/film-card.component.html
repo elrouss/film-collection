@@ -13,7 +13,7 @@
     </ul>
 
     <span class="inline-flex gap-1"
-      ><app-icon class="text-amber-500" name="kid-star" /> {{ rating() }}
+      ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ rating() }}
     </span>
   </div>
 
@@ -29,7 +29,7 @@
 
     <app-icon-button
       class="absolute z-[2] inset-bs-[12px] inset-e-[12px]"
-      size="l"
+      [size]="'l'"
       [icon]="isFavoriteCard ? 'favorite-filled' : 'favorite'"
       [ariaLabel]="isFavoriteCard ? 'Delete favorites' : 'Add to favorites'"
       [withBg]="true"

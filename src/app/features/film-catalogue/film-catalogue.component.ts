@@ -1,7 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 
-import { InputComponent } from '../../shared/components/input/input.component';
+import { EmptyComponent } from '../../shared/components/empty/empty.component';
 import { FilmListComponent } from './components/film-list/film-list.component';
+import { InputComponent } from '../../shared/components/input/input.component';
 
 import { FilmsService } from '../state/films/films.service';
 
@@ -9,7 +10,7 @@ import { AutofocusDirective } from '../../shared/directives/autofocus/autofocus.
 
 @Component({
   selector: 'app-film-catalogue',
-  imports: [AutofocusDirective, FilmListComponent, InputComponent],
+  imports: [AutofocusDirective, EmptyComponent, FilmListComponent, InputComponent],
   templateUrl: './film-catalogue.component.html',
 })
 export class FilmCatalogueComponent {

@@ -1,14 +1,25 @@
-<section class="flex flex-col mbs-[20px]" aria-label="Film catalogue">
+@let films = _filmsService.getFilms({ title: this._titleFilter() })();
+
+<section class="flex flex-col mbs-5" aria-label="Film catalogue">
   <app-input
     class="max-w-xs w-full mx-auto"
-    placeholder="Search film"
-    icon="search"
     appAutofocus
+    [icon]="'search'"
+    [placeholder]="'Search film'"
     (input)="_searchFilmByTitle($event)"
   />
 
-  <app-film-list
-    class="mbs-[24px]"
-    [films]="_filmsService.getFilms({ title: this._titleFilter() })()"
-  />
+  @if (films.length > 0) {
+    <app-film-list
+      class="mbs-6"
+      [films]="_filmsService.getFilms({ title: this._titleFilter() })()"
+    />
+  } @else {
+    <app-empty
+      class="mbs-34"
+      [heading]="'Nothing found'"
+      [description]="'Try checking the spelling or&nbsp;use a&nbsp;different movie title'"
+      [icon]="'search-off'"
+    />
+  }
 </section>

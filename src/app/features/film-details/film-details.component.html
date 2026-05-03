@@ -1,6 +1,6 @@
 @let film = _filmsService.getFilmById();
 
-<section class="flex gap-10 mbs-[20px]">
+<section class="flex gap-10 mbs-5">
   @if (film) {
     <div class="order-2">
       <header>
@@ -17,7 +17,7 @@
         </ul>
 
         <span class="inline-flex gap-1 mbs-1"
-          ><app-icon class="text-amber-500" name="kid-star" /> {{ film.rating }}
+          ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ film.rating }}
         </span>
       </header>
 
@@ -35,6 +35,13 @@
       height="612"
       alt="Poster"
       priority
+    />
+  } @else {
+    <app-empty
+      class="mbs-34 mx-auto"
+      [heading]="'Nothing found'"
+      [description]="'The movie you\'re looking for might have been removed or&nbsp;the link is&nbsp;incorrect.\nTry browsing our catalog instead'"
+      [icon]="'cancel'"
     />
   }
 </section>

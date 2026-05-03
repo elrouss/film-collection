@@ -15,6 +15,9 @@ export class IconComponent {
     const base = ['aspect-square'];
 
     switch (this.size()) {
+      case 'xl':
+        base.push('w-[40px]');
+        break;
       case 'l':
         base.push('w-[28px]');
         break;

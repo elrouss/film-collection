@@ -1,4 +1,5 @@
 type IconName =
+  | 'cancel'
   | 'date-range'
   | 'favorite'
   | 'favorite-filled'
@@ -6,7 +7,8 @@ type IconName =
   | 'github'
   | 'kid-star'
   | 'movie'
-  | 'search';
-type IconSize = 's' | 'm' | 'l';
+  | 'search'
+  | 'search-off';
+type IconSize = 's' | 'm' | 'l' | 'xl';
 
 export type { IconName, IconSize };
