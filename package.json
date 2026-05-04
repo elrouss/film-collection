@@ -1,6 +1,7 @@
 {
   "name": "film-collection",
   "version": "0.0.0",
+  "homepage": "https://elrouss.github.io/film-collection",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,7 +25,6 @@
       }
     ]
   },
-  "private": true,
   "packageManager": "npm@10.9.2",
   "dependencies": {
     "@angular/common": "^21.1.0",
@@ -42,6 +42,7 @@
     "@angular/compiler-cli": "^21.1.0",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4.1.12",
+    "angular-cli-ghpages": "^3.0.3",
     "angular-eslint": "21.3.1",
     "eslint": "^10.0.3",
     "eslint-config-prettier": "^10.1.8",

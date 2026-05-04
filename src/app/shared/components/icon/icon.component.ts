@@ -6,7 +6,6 @@ import type { IconName, IconSize } from './icon.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-icon',
   templateUrl: './icon.component.html',
-  standalone: true,
 })
 export class IconComponent {
   readonly name = input.required<IconName>();

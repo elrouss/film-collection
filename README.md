@@ -9,6 +9,8 @@
     - [What I Practiced](#what-i-practiced)
   - [2. Tech Stack](#2-tech-stack)
   - [3. Getting Started](#3-getting-started)
+    - [Requirements](#requirements)
+    - [Local setup](#local-setup)
   - [4. Features](#4-features)
   - [5. Architecture](#5-architecture)
   - [6. Performance and Optimizations](#6-performance-and-optimizations)
@@ -228,10 +230,6 @@ Unit tests in this project are executed with `Vitest` through the Angular test r
 [back to contents](#contents)
 
 ## 11. Deployment
-
-Planned GitHub Pages URL:
-
-- https://elrouss.github.io/film-collection
 
 Deployment target: GitHub Pages at `https://elrouss.github.io/film-collection`
 (see `homepage` in `package.json`).
