@@ -1,39 +1,41 @@
-@let film = _filmById();
+@let currentFilm = _currentFilm();
 
 <section class="mbs-2">
   <app-link class="-ms-3.5" [text]="'Back'" [icon]="'arrow-back'" [routerLink]="'/'" />
 
   <div class="flex flex-col md:flex-row gap-10 mbs-2">
-    @if (film) {
+    @if (currentFilm) {
       <div class="order-2">
         <header>
           <div class="flex items-center gap-2 text-3xl">
             <h2>
-              {{ film.title }}
-              <time class="font-light" [attr.datetime]="film.year">({{ film.year }})</time>
+              {{ currentFilm.title }}
+              <time class="font-light" [attr.datetime]="currentFilm.year"
+                >({{ currentFilm.year }})</time
+              >
             </h2>
           </div>
 
           <ul class="flex gap-2 mbs-1 list-disc">
-            <li class="list-none">{{ film.genre }}</li>
+            <li class="list-none">{{ currentFilm.genre }}</li>
 
-            <li class="ms-4">{{ film.duration | duration }}</li>
+            <li class="ms-4">{{ currentFilm.duration | duration }}</li>
           </ul>
 
           <span class="inline-flex gap-1 mbs-1"
-            ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ film.rating }}
+            ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ currentFilm.rating }}
           </span>
         </header>
 
         <div class="mbs-5">
           <h3 class="text-xl">Overview</h3>
 
-          <p class="mbs-1">{{ film.description }}</p>
+          <p class="mbs-1">{{ currentFilm.description }}</p>
         </div>
       </div>
 
       <img
-        ngSrc="{{ film.posterUrl }}"
+        ngSrc="{{ currentFilm.posterUrl }}"
         class="order-1 object-cover mx-auto"
         width="414"
         height="612"

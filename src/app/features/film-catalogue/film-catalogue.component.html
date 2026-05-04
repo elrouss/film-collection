@@ -1,4 +1,4 @@
-@let films = _filmsService.getFilms({ title: this._titleFilter() })();
+@let films = _filmsService.getFilms({ title: this._titleFilter() });
 
 <section class="flex flex-col mbs-5" aria-label="Film catalogue">
   <app-input
@@ -12,7 +12,7 @@
   @if (films.length > 0) {
     <app-film-list
       class="mbs-6"
-      [films]="_filmsService.getFilms({ title: this._titleFilter() })()"
+      [films]="films"
       (toggleFavoriteStatus)="_toggleFilmFavoriteStatus($event)"
     />
   } @else {

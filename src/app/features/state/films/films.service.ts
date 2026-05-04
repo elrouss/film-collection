@@ -5,9 +5,7 @@ import filmsMock from '../../../../assets/mock/films.json';
 import type { Film } from '../../../core/models/film.model';
 
 interface State {
-  data: {
-    films: Film[];
-  };
+  films: Film[];
 }
 
 @Injectable({
@@ -15,41 +13,34 @@ interface State {
 })
 export class FilmsService {
   private readonly _state = signal<State>({
-    data: {
-      films: filmsMock,
-    },
+    films: filmsMock,
   });
 
-  readonly getFilms = (filters?: { title: string }): Signal<Film[]> =>
-    computed(() => {
-      const { films } = this._state().data;
+  readonly getFilms = (filters?: { title: string }): Film[] => {
+    const { films } = this._state();
 
-      if (!filters) {
-        return films;
-      }
+    if (!filters) {
+      return films;
+    }
 
-      const titleFilter = filters.title.toLowerCase();
-      return films.filter((film) => film.title.toLowerCase().includes(titleFilter));
-    });
+    const titleFilter = filters.title.toLowerCase();
+    return films.filter((film) => film.title.toLowerCase().includes(titleFilter));
+  };
 
   readonly getFavoriteFilms: Signal<Film[]> = computed(() =>
-    this._state().data.films.filter((film) => film.isFavorite),
+    this._state().films.filter((film) => film.isFavorite),
   );
 
-  readonly getFilmById = (id: Film['id']): Signal<Film | undefined> =>
-    computed(() => this._state().data.films.find((film) => film.id === id));
+  readonly getFilmById = (id: Film['id']): Film | undefined =>
+    this._state().films.find((film) => film.id === id);
 
   readonly toggleFavoriteStatus = (id: Film['id']): void => {
     const state = this._state();
 
     this._state.set({
-      ...state.data,
-      data: {
-        ...state.data,
-        films: state.data.films.map((film) =>
-          film.id === id ? { ...film, isFavorite: !film.isFavorite } : film,
-        ),
-      },
+      films: state.films.map((film) =>
+        film.id === id ? { ...film, isFavorite: !film.isFavorite } : film,
+      ),
     });
   };
 }
