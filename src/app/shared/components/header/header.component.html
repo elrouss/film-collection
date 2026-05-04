@@ -44,7 +44,7 @@
     </div>
 
     <nav class="hidden md:block">
-      <ul class="flex gap-3">
+      <ul class="flex gap-2">
         @for (link of links; track $index) {
           <li>
             <app-link [text]="link.name" [routerLink]="link.href" />

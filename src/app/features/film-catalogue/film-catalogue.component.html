@@ -1,5 +1,7 @@
 @let films = _filmsService.getFilms({ title: this._titleFilter() });
 
+<app-breadcrumb [items]="_breadcrumbs()" />
+
 <section class="flex flex-col mbs-5" aria-label="Film catalogue">
   <app-input
     class="max-w-xs w-full mx-auto"

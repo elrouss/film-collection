@@ -1,5 +1,7 @@
 @let currentFilm = _currentFilm();
 
+<app-breadcrumb [items]="_breadcrumbs()" />
+
 <section class="mbs-2">
   <app-link class="-ms-3.5" [text]="'Back'" [icon]="'arrow-back'" [routerLink]="'/'" />
 

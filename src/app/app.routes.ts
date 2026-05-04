@@ -2,51 +2,25 @@ import { Routes } from '@angular/router';
 
 import { ROUTES } from './core/constants/routes';
 
-import { filmdTitleBreadcrumbResolver } from './features/film-details/breadcrumb.resolvers';
-
 export const routes: Routes = [
   {
     path: ROUTES.home,
-    data: { breadcrumb: 'Home' },
+    loadComponent: () =>
+      import('./features/film-catalogue/film-catalogue.component').then(
+        (m) => m.FilmCatalogueComponent,
+      ),
     title: 'Film Catalogue',
-    children: [
-      {
-        path: '',
-        data: { breadcrumb: null },
-        loadComponent: () =>
-          import('./features/film-catalogue/film-catalogue.component').then(
-            (m) => m.FilmCatalogueComponent,
-          ),
-      },
-      {
-        path: ROUTES.filmDetails,
-        resolve: { breadcrumb: filmdTitleBreadcrumbResolver },
-        title: 'Film Details',
-        children: [
-          {
-            path: '',
-            data: { breadcrumb: null },
-            loadComponent: () =>
-              import('./features/film-details/film-details.component').then(
-                (m) => m.FilmDetailsComponent,
-              ),
-          },
-        ],
-      },
-      {
-        path: ROUTES.about,
-        data: { breadcrumb: 'About' },
-        title: 'About',
-        children: [
-          {
-            path: '',
-            data: { breadcrumb: null },
-            loadComponent: () =>
-              import('./features/about/about.component').then((m) => m.AboutComponent),
-          },
-        ],
-      },
-    ],
+  },
+  {
+    path: ROUTES.filmDetails,
+    loadComponent: () =>
+      import('./features/film-details/film-details.component').then((m) => m.FilmDetailsComponent),
+    title: 'Film Details',
+  },
+  {
+    path: ROUTES.about,
+    title: 'About',
+    loadComponent: () => import('./features/about/about.component').then((m) => m.AboutComponent),
   },
   {
     path: ROUTES.wildcard,
