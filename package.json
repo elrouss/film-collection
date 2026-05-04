@@ -1,11 +1,12 @@
 {
   "name": "film-collection",
   "version": "0.0.0",
-  "homepage": "https://elrouss.github.io/film-collection",
+  "homepage": "https://elrouss.github.io/film-collection/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng deploy --base-href=/film-collection/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
     "tsc": "npx tsc -p tsconfig.app.json --noEmit",

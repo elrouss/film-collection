@@ -212,6 +212,7 @@ src/
 
 - `npm start` — run Angular dev server
 - `npm run build` — create production build
+- `ng deploy --base-href=/film-collection/` - deploy project on GitHub Pages
 - `npm run watch` — development build in watch mode
 - `npm run test` — run unit tests
 - `npm run tsc` — run TypeScript type check
