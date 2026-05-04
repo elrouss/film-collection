@@ -27,6 +27,10 @@ export class FilmsService {
     return films.filter((film) => film.title.toLowerCase().includes(titleFilter));
   };
 
+  readonly setFilms = (films: Film[]): void => {
+    this._state.set({ films });
+  };
+
   readonly getFavoriteFilms: Signal<Film[]> = computed(() =>
     this._state().films.filter((film) => film.isFavorite),
   );

@@ -10,29 +10,30 @@
       <div class="order-2">
         <header>
           <div class="flex items-center gap-2 text-3xl">
-            <h2>
+            <h2 data-test="title">
               {{ currentFilm.title }}
-              <time class="font-light" [attr.datetime]="currentFilm.year"
+              <time class="font-light" data-test="year" [attr.datetime]="currentFilm.year"
                 >({{ currentFilm.year }})</time
               >
             </h2>
           </div>
 
           <ul class="flex gap-2 mbs-1 list-disc">
-            <li class="list-none">{{ currentFilm.genre }}</li>
+            <li class="list-none" data-test="genre">{{ currentFilm.genre }}</li>
 
-            <li class="ms-4">{{ currentFilm.duration | duration }}</li>
+            <li class="ms-4" data-test="duration">{{ currentFilm.duration | duration }}</li>
           </ul>
 
-          <span class="inline-flex gap-1 mbs-1"
-            ><app-icon class="text-amber-500" [name]="'kid-star'" /> {{ currentFilm.rating }}
+          <span class="inline-flex gap-1 mbs-1" data-test="rating"
+            ><app-icon class="text-amber-500" [name]="'kid-star'" />
+            {{ currentFilm.rating | number: '1.1-1' }}
           </span>
         </header>
 
         <div class="mbs-5">
           <h3 class="text-xl">Overview</h3>
 
-          <p class="mbs-1">{{ currentFilm.description }}</p>
+          <p class="mbs-1" data-test="description">{{ currentFilm.description }}</p>
         </div>
       </div>
 
@@ -42,6 +43,7 @@
         width="414"
         height="612"
         alt="Poster"
+        data-test="poster"
         priority
       />
     } @else {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, Signal } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { DecimalPipe, NgOptimizedImage } from '@angular/common';
 
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
 import { EmptyComponent } from '../../shared/components/empty/empty.component';
@@ -17,6 +17,7 @@ import type { Breadcrumb } from '../../shared/components/breadcrumb/breadcrumb.t
   selector: 'app-film-details',
   imports: [
     BreadcrumbComponent,
+    DecimalPipe,
     DurationPipe,
     EmptyComponent,
     IconComponent,

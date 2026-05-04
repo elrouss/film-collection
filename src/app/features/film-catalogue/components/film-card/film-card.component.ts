@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
+import { DecimalPipe, NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 import { IconButtonComponent } from '../../../../shared/components/icon-button/icon-button.component';
 import { IconComponent } from '../../../../shared/components/icon/icon.component';
 
 import type { Film } from '../../../../core/models/film.model';
-import { RouterLink } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-film-card',
-  imports: [IconButtonComponent, IconComponent, NgOptimizedImage, RouterLink],
+  imports: [DecimalPipe, IconButtonComponent, IconComponent, NgOptimizedImage, RouterLink],
   templateUrl: './film-card.component.html',
   host: {
     class: 'block h-full',

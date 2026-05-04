@@ -1,13 +1,15 @@
 @let breadcrumbs = items();
 
-<nav aria-label="Breadcrumb" [class]="_className()">
-  <ol class="flex">
-    @for (breadcrumb of breadcrumbs; track breadcrumb.url) {
-      <li
-        class="not-first:before:inline-block not-first:before:h-[0.8em] not-first:before:border-e-[0.1em] not-first:before:border-solid not-first:before:border-current not-first:before:mx-auto not-first:before:rotate-15"
-      >
-        <app-link [routerLink]="breadcrumb.url" [text]="breadcrumb.label" />
-      </li>
-    }
-  </ol>
-</nav>
+@if (breadcrumbs.length > 0) {
+  <nav aria-label="Breadcrumb" [class]="_className()">
+    <ol class="flex">
+      @for (breadcrumb of breadcrumbs; track breadcrumb.url) {
+        <li
+          class="not-first:before:inline-block not-first:before:h-[0.8em] not-first:before:border-e-[0.1em] not-first:before:border-solid not-first:before:border-current not-first:before:mx-auto not-first:before:rotate-15"
+        >
+          <app-link [routerLink]="breadcrumb.url" [text]="breadcrumb.label" />
+        </li>
+      }
+    </ol>
+  </nav>
+}
