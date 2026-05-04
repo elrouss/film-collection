@@ -33,7 +33,7 @@
       [icon]="isFavoriteCard ? 'favorite-filled' : 'favorite'"
       [ariaLabel]="isFavoriteCard ? 'Delete favorites' : 'Add to favorites'"
       [withBg]="true"
-      (click)="_filmsService.toggleFavoriteStatus(id())"
+      (click)="_onToggleFavoriteStatus(id())"
     />
   </div>
 

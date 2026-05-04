@@ -8,6 +8,8 @@ import { FilmsService } from '../state/films/films.service';
 
 import { AutofocusDirective } from '../../shared/directives/autofocus/autofocus.directive';
 
+import type { Film } from '../../core/models/film.model';
+
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-film-catalogue',
@@ -24,5 +26,9 @@ export class FilmCatalogueComponent {
     }
 
     this._titleFilter.set(target.value);
+  };
+
+  protected readonly _toggleFilmFavoriteStatus = (filmId: Film['id']): void => {
+    this._filmsService.toggleFavoriteStatus(filmId);
   };
 }

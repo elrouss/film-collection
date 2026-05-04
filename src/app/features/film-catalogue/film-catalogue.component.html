@@ -13,6 +13,7 @@
     <app-film-list
       class="mbs-6"
       [films]="_filmsService.getFilms({ title: this._titleFilter() })()"
+      (toggleFavoriteStatus)="_toggleFilmFavoriteStatus($event)"
     />
   } @else {
     <app-empty

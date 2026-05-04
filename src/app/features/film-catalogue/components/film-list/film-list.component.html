@@ -9,6 +9,7 @@
         [year]="film.year"
         [poster]="film.posterUrl"
         [isFavorite]="film.isFavorite"
+        (toggleFavoriteStatus)="_onToggleFavoriteStatus($event)"
       />
     </li>
   }

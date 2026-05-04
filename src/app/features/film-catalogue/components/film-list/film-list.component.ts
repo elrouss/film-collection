@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
 import { FilmCardComponent } from '../film-card/film-card.component';
 
@@ -15,4 +15,10 @@ import type { Film } from '../../../../core/models/film.model';
 })
 export class FilmListComponent {
   readonly films = input<Film[]>([]);
+
+  readonly toggleFavoriteStatus = output<Film['id']>();
+
+  protected readonly _onToggleFavoriteStatus = (filmId: Film['id']): void => {
+    this.toggleFavoriteStatus.emit(filmId);
+  };
 }
