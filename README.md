@@ -1,5 +1,7 @@
 # Film Collection
 
+<img width="1189" height="829" alt="Screenshot 2026-05-04 at 10 30 03" src="https://github.com/user-attachments/assets/08b23f36-2b0b-4b0b-96e5-3452f1117ccf" />
+
 ## Contents
 
 - [Film Collection](#film-collection)
@@ -65,6 +67,12 @@ reflecting production-like frontend structure.
 [back to contents](#contents)
 
 ## 2. Tech Stack
+
+![Angular Badge](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Vitest Badge](https://img.shields.io/badge/Vitest-%236E9F18?style=for-the-badge&logo=Vitest&logoColor=%23fcd703)
 
 - Angular 21
 - TypeScript 5 with `strict` mode
